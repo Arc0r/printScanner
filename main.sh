@@ -28,8 +28,9 @@ function snmp {
 }
 
 if [ $# -eq 0 ];then
-  for LAST in {30..60};do
-    IP="10.155.13.$LAST"
+  for LAST in {1..255};do
+  # IP range can be changed her
+    IP="10.0.0.$LAST"
     snmp $IP
   done
 else
